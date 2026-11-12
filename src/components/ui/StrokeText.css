@@ -1,0 +1,19 @@
+.stroke-text {
+  display: inline-block;
+  position: relative;
+  line-height: 1;
+  vertical-align: middle;
+  max-width: 100%;
+  overflow: visible;
+}
+
+.stroke-text__svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.stroke-text--hover {
+  cursor: pointer;
+}

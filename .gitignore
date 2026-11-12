@@ -1,0 +1,47 @@
+# Dependencies
+node_modules/
+
+# Production build
+dist/
+dist-ssr/
+
+# Environment
+.env
+.env*.local
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+pnpm-debug.log*
+
+# OS & Editor files
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+.vercel
+
+
+# Environment variables and secrets
+.env
+.env.*
+!.env.example
+.env.backup
+
+# Dependencies
+node_modules/
+
+# Build files
+dist/
+build/
+
+# Supabase temporary files
+supabase/.temp/
+
+# Logs
+*.log
+npm-debug.log*
+
+# Local editor files
+.vscode/
+.idea/

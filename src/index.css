@@ -1,0 +1,215 @@
+@import "tailwindcss";
+
+/* ==========================================================================
+   OBSIDIAN CHROME DESIGN SYSTEM TOKENS
+   Variant A (Default): Graphite Chrome
+   Variant B (Alternate): Navy Chrome (via [data-theme="navy"])
+   ========================================================================== */
+
+:root,
+[data-theme="graphite"] {
+  --bg-base: #0B0C0E;
+  --bg-surface: #16181B;
+  --bg-surface-2: #1D2024;
+  --border-hairline: rgba(255, 255, 255, 0.08);
+  --border-hairline-strong: rgba(255, 255, 255, 0.16);
+  --text-primary: #F5F5F4;
+  --text-secondary: #9CA0A6;
+  --text-tertiary: #6B6F76;
+  --chrome-gradient: linear-gradient(135deg, #EAEBED 0%, #9CA0A6 22%, #FFFFFF 48%, #7B7F87 72%, #D9DADC 100%);
+  --cta-solid: #F5F5F4;
+  --cta-solid-text: #0B0C0E;
+
+  /* Desaturated Muted Status Tokens */
+  --status-success: #7A8C7A;
+  --status-error: #B5675C;
+  --status-warning: #C29B38;
+}
+
+[data-theme="navy"] {
+  --bg-base: #090B10;
+  --bg-surface: #12151C;
+  --bg-surface-2: #191D26;
+  --border-hairline: rgba(200, 210, 255, 0.08);
+  --border-hairline-strong: rgba(200, 210, 255, 0.16);
+  --text-primary: #F2F4F8;
+  --text-secondary: #8D93A3;
+  --text-tertiary: #5C6172;
+  --chrome-gradient: linear-gradient(135deg, #E7ECF5 0%, #7C88A6 22%, #FFFFFF 48%, #2E3A56 72%, #C7CEDD 100%);
+  --cta-solid: #F2F4F8;
+  --cta-solid-text: #0A0E17;
+
+  --status-success: #7A8C7A;
+  --status-error: #B5675C;
+  --status-warning: #C29B38;
+}
+
+/* ==========================================================================
+   GLOBAL RESET & BASE STYLES
+   ========================================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--bg-base);
+  color: var(--text-primary);
+  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ==========================================================================
+   TYPOGRAPHY UTILITIES
+   ========================================================================== */
+
+.font-display {
+  font-family: 'Anton', 'Big Shoulders Display', 'Arial Black', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: -0.015em;
+  line-height: 0.9;
+}
+
+.eyebrow-label {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--text-tertiary);
+  font-weight: 600;
+}
+
+/* Brushed Chrome Effect (Max 1-2 per screen) */
+.chrome-text {
+  background: var(--chrome-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  display: inline-block;
+}
+
+.chrome-panel {
+  background: var(--chrome-gradient);
+  color: var(--cta-solid-text);
+}
+
+/* ==========================================================================
+   HAIRLINE SURFACES & BORDERS (Replacing Drop Shadows)
+   ========================================================================== */
+
+.bg-base {
+  background-color: var(--bg-base);
+}
+
+.bg-surface {
+  background-color: var(--bg-surface);
+}
+
+.bg-surface-2 {
+  background-color: var(--bg-surface-2);
+}
+
+.border-hairline {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--border-hairline);
+}
+
+.border-hairline-strong {
+  border-width: 1px;
+  border-style: solid;
+  border-color: var(--border-hairline-strong);
+}
+
+.border-hairline-t {
+  border-top-width: 1px;
+  border-top-style: solid;
+  border-top-color: var(--border-hairline);
+}
+
+.border-hairline-b {
+  border-bottom-width: 1px;
+  border-bottom-style: solid;
+  border-bottom-color: var(--border-hairline);
+}
+
+.border-hairline-l {
+  border-left-width: 1px;
+  border-left-style: solid;
+  border-left-color: var(--border-hairline);
+}
+
+.border-hairline-r {
+  border-right-width: 1px;
+  border-right-style: solid;
+  border-right-color: var(--border-hairline);
+}
+
+/* Minimalist Editorial Card */
+.obsidian-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: 8px;
+  transition: border-color 0.2s cubic-bezier(0.22, 1, 0.36, 1), transform 0.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.obsidian-card:hover {
+  border-color: var(--border-hairline-strong);
+  transform: scale(1.01);
+}
+
+/* Primary CTA Solid Pill (The deliberate contrast element) */
+.cta-pill-solid {
+  background-color: var(--cta-solid);
+  color: var(--cta-solid-text);
+  border-radius: 9999px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.cta-pill-solid:hover {
+  opacity: 0.92;
+  transform: translateY(-1px);
+}
+
+.cta-pill-solid:active {
+  transform: translateY(0);
+}
+
+/* ==========================================================================
+   MINIMALIST CUSTOM SCROLLBARS
+   ========================================================================== */
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border-hairline-strong);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-tertiary);
+}
+
+.custom-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-hairline-strong) var(--bg-base);
+}
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: var(--bg-base);
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--border-hairline-strong);
+  border-radius: 4px;
+}
